@@ -7,6 +7,7 @@ import json
 import httpx
 from urllib import parse
 from pydantic import BaseModel
+from api.utils import get_access_token_by_code, refresh_access_token
 
 
 def sign(secret, parameters):
@@ -104,3 +105,21 @@ class RestApi(object):
             url = url + "?" + parse.urlencode(sys_parameters)
             json_obj = httpx.get(url, timeout=timeout).json()
         return json_obj
+
+    def get_access_token_first(self, code, grant_type="code"):
+        """
+        Get access token using the provided parameters.
+        :param code: Authorization code received from the callback URL.
+        :param grant_type: Type of grant, default is "code".
+        """
+        data = get_access_token_by_code(self.appkey, self.secret, code, grant_type)
+        return data
+
+    def refresh_access_token(self, refresh_token, grant_type="refresh_token"):
+        """
+        Refresh the access token using the provided refresh token.
+        :param refresh_token: The refresh token to use for refreshing the access token.
+        :param grant_type: Type of grant, default is "refresh_token".
+        """
+        data = refresh_access_token(self.appkey, self.secret, refresh_token, grant_type)
+        return data
