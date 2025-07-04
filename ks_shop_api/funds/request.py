@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import deprecation
-from api.base import RestApi
+from ks_shop_api.base import RestApi
 """
 账单API
 """

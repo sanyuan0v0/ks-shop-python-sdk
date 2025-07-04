@@ -7,7 +7,7 @@ import json
 import httpx
 from urllib import parse
 from pydantic import BaseModel
-from api.utils import get_access_token_by_code, refresh_access_token
+from ks_shop_api.utils import get_access_token_by_code, refresh_access_token
 
 
 def sign(secret, parameters):
