@@ -23,8 +23,8 @@ print(refresh_res)
 
 ##### 使用
 ```python
-from ks_shop_api.funds.request import CenterAccountInfoRequest
-from ks_shop_api.funds.schema import CenterAccountInfoSchema
+from ks_shop_api.funds.request import OpenFundsCenterAccountInfoRequest
+from ks_shop_api.funds.schema import OpenFundsCenterAccountInfoSchema
 from ks_shop_api.schema import baseAppInfoSchema
 
 
@@ -34,11 +34,26 @@ base_app_info.app_key = "xxxx"
 base_app_info.secret = "xxxx"
 base_app_info.sign_secret = "xxxx"
 print(base_app_info)
-ks_obj = CenterAccountInfoRequest(**base_app_info.model_dump())
-ks_schema = CenterAccountInfoSchema()
+ks_obj = OpenFundsCenterAccountInfoRequest(**base_app_info.model_dump())
+
+ks_schema = OpenFundsCenterAccountInfoSchema()
 print(ks_schema)
 print(ks_schema.model_dump())
 
 res = ks_obj.getResponse(access_token, params=ks_schema)
+print(res)
+
+
+######或者 dict########
+access_token = 'xxxx'
+app_info = {
+    "app_key": "xxxx",
+    "secret": "xxxx",
+    "sign_secret": "xxxx"
+}
+ks_obj: RestApi = OpenFundsCenterAccountInfoRequest(**app_info)
+
+params = {}
+res = ks_obj.getResponse(access_token, params=params)
 print(res)
 ```

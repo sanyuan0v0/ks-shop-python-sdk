@@ -5,7 +5,7 @@ from ks_shop_api.base import RestApi
 账单API
 """
 
-class CenterAccountInfoRequest(RestApi):
+class OpenFundsCenterAccountInfoRequest(RestApi):
     """
     查询现金户
     更新时间: 2023-11-15 14:38:21
@@ -21,10 +21,8 @@ class CenterAccountInfoRequest(RestApi):
         return "open.funds.center.account.info"
 
 
-@deprecation.deprecated(
-    details="待下线，请使用open.funds.financial.settled.bill.detail查询账单信息（新)"
-)
-class CenterGetDailyBillRequest(RestApi):
+@deprecation.deprecated(details="待下线，请使用open.funds.financial.settled.bill.detail查询账单信息（新)")
+class OpenFundsCenterGetDailyBillRequest(RestApi):
     """
     下载日账单（待下线）
     更新时间: 2024-05-21 16:09:13
@@ -40,7 +38,7 @@ class CenterGetDailyBillRequest(RestApi):
         return "open.funds.center.get.daily.bill"
 
 
-class CenterGetDepositinfoRequest(RestApi):
+class OpenFundsCenterGetDepositinfoRequest(RestApi):
     """
     查询保证金余额
     更新时间: 2024-10-24 17:48:27
@@ -55,7 +53,7 @@ class CenterGetDepositinfoRequest(RestApi):
         return "open.funds.center.get.depositinfo"
 
 
-class CenterGetWithdrawResultRequest(RestApi):
+class OpenFundsCenterGetWithdrawResultRequest(RestApi):
     """
     查询现金户提现申请结果
     更新时间: 2023-08-10 10:53:20
@@ -70,7 +68,7 @@ class CenterGetWithdrawResultRequest(RestApi):
         return "open.funds.center.get.withdraw.result"
 
 
-class CenterWirhdrawRecordListRequest(RestApi):
+class OpenFundsCenterWirhdrawRecordListRequest(RestApi):
     """
     查询现金户提现列表
     更新时间: 2024-12-19 16:39:32
@@ -85,7 +83,7 @@ class CenterWirhdrawRecordListRequest(RestApi):
         return "open.funds.center.wirhdraw.record.list"
 
 
-class CenterWithdrawApplyRequest(RestApi):
+class OpenFundsCenterWithdrawApplyRequest(RestApi):
     """
     申请现金户提现
     更新时间: 2025-01-06 11:37:09
@@ -100,10 +98,8 @@ class CenterWithdrawApplyRequest(RestApi):
         return "open.funds.center.withdraw.apply"
 
 
-@deprecation.deprecated(
-    details="待下线，请使用open.funds.financial.settled.bill.detail(获取账单信息v2)"
-)
-class FinancialBillBatchDetailRequest(RestApi):
+@deprecation.deprecated(details="待下线，请使用open.funds.financial.settled.bill.detail(获取账单信息v2)")
+class OpenFundsFinancialBillBatchDetailRequest(RestApi):
     """
     普通账单数据（待下线）
     更新时间: 2023-10-31 10:44:32
@@ -118,10 +114,8 @@ class FinancialBillBatchDetailRequest(RestApi):
         return "open.funds.financial.bill.batch.detail"
 
 
-@deprecation.deprecated(
-    details="待下线，请使用open.funds.financial.settled.bill.detail(获取账单信息v2)"
-)
-class FinancialBillDetailRequest(RestApi):
+@deprecation.deprecated(details="待下线，请使用open.funds.financial.settled.bill.detail(获取账单信息v2)")
+class OpenFundsFinancialBillDetailRequest(RestApi):
     """
     账单详情信息（待下线）
     更新时间: 2023-10-31 10:47:01
@@ -136,7 +130,7 @@ class FinancialBillDetailRequest(RestApi):
         return "open.funds.financial.bill.detail"
 
 
-class FinancialBillLogisticsProviderQueryRequest(RestApi):
+class OpenFundsFinancialBillLogisticsProviderQueryRequest(RestApi):
     """
     物流供应商账单明细
     更新时间: 2025-03-24 10:50:04
@@ -151,7 +145,7 @@ class FinancialBillLogisticsProviderQueryRequest(RestApi):
         return "open.funds.financial.bill.logistics.provider.query"
 
 
-class FinancialBillPostSalesListRequest(RestApi):
+class OpenFundsFinancialBillPostSalesListRequest(RestApi):
     """
     查询超售后期账单列表
     更新时间: 2025-05-29 11:38:40
@@ -166,7 +160,7 @@ class FinancialBillPostSalesListRequest(RestApi):
         return "open.funds.financial.bill.post.sales.list"
 
 
-class FinancialBillPostSalesListRequest(RestApi):
+class OpenFundsFinancialBillPostSalesListRequest(RestApi):
     """
     查询达人钱包账单（平安、聚力）
     更新时间: 2025-01-13 15:38:10
@@ -182,7 +176,7 @@ class FinancialBillPostSalesListRequest(RestApi):
         return "open.funds.financial.bill.query.account"
 
 
-class FinancialFreightInsuranceListRequest(RestApi):
+class OpenFundsFinancialFreightInsuranceListRequest(RestApi):
     """
     查询运费险扣费明细
     更新时间: 2025-01-16 16:26:37
@@ -198,7 +192,7 @@ class FinancialFreightInsuranceListRequest(RestApi):
         return "open.funds.financial.freight.insurance.list"
 
 
-class FinancialPinganBillRequest(RestApi):
+class OpenFundsFinancialPinganBillRequest(RestApi):
     """
     查询安心钱包账务明细
     更新时间: 2024-09-10 16:52:24
@@ -216,7 +210,7 @@ class FinancialPinganBillRequest(RestApi):
         return "open.funds.financial.pingan.bill"
 
 
-class FinancialQueryBillListRequest(RestApi):
+class OpenFundsFinancialQueryBillListRequest(RestApi):
     """
     查询达人账单列表
     更新时间: 2025-04-08 16:29:39
@@ -232,7 +226,7 @@ class FinancialQueryBillListRequest(RestApi):
         return "open.funds.financial.query.bill.list"
 
 
-class FinancialSettledBillDetailRequest(RestApi):
+class OpenFundsFinancialSettledBillDetailRequest(RestApi):
     """
     查询账单信息（新）
     更新时间: 2025-04-07 19:44:26
@@ -248,7 +242,7 @@ class FinancialSettledBillDetailRequest(RestApi):
         return "open.funds.financial.settled.bill.detail"
 
 
-class FinancialStatementListRequest(RestApi):
+class OpenFundsFinancialStatementListRequest(RestApi):
     """
     查询货款账单明细
     更新时间: 2024-07-05 11:27:23
@@ -266,7 +260,7 @@ class FinancialStatementListRequest(RestApi):
         return "open.funds.financial.statement.list"
 
 
-class PlatformCenterAgreementBillDownloadRequest(RestApi):
+class OpenFundsPlatformCenterAgreementBillDownloadRequest(RestApi):
     """
     辛选年框账单下载
     更新时间: 2025-04-10 19:50:14
@@ -282,7 +276,7 @@ class PlatformCenterAgreementBillDownloadRequest(RestApi):
         return "open.funds.platform.center.agreement.bill.download"
 
 
-class SubsidyAuditInvoiceInfoRequest(RestApi):
+class OpenFundsSubsidyAuditInvoiceInfoRequest(RestApi):
     """
     国补消费者发票信息查询接口
     更新时间: 2025-03-20 19:37:36
@@ -298,7 +292,7 @@ class SubsidyAuditInvoiceInfoRequest(RestApi):
         return "open.funds.subsidy.audit.invoice.info"
 
 
-class SubsidyOpenApplyInvoiceRequest(RestApi):
+class OpenFundsSubsidyOpenApplyInvoiceRequest(RestApi):
     """
     国补审计提交发票
     更新时间: 2025-06-12 16:47:20
@@ -314,7 +308,7 @@ class SubsidyOpenApplyInvoiceRequest(RestApi):
         return "open.funds.subsidy.open.apply.invoice"
 
 
-class SubsidyOpenApplyInvoiceFileRequest(RestApi):
+class OpenFundsSubsidyOpenApplyInvoiceFileRequest(RestApi):
     """
     国补审计提交发票附带文件
     更新时间: 2025-06-12 16:48:22
